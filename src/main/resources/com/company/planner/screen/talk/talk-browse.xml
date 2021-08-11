@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://jmix.io/schema/ui/window"
-        xmlns:c="http://jmix.io/schema/ui/jpql-condition"
         caption="msg://talkBrowse.caption"
         focusComponent="talksTable">
     <data readOnly="true">
@@ -33,35 +32,54 @@
     </actions>
     <dialogMode height="600"
                 width="800"/>
-    <layout expand="talksTable" spacing="true">
+    <layout  spacing="false" expand="talkTab">
         <filter id="filter"
                 dataLoader="talksDl">
             <properties include=".*"/>
         </filter>
-        <groupTable id="talksTable"
-                    width="100%"
-                    dataContainer="talksDc">
-            <actions>
-                <action id="create" type="create"/>
-                <action id="edit" type="edit"/>
-                <action id="remove" type="remove"/>
-            </actions>
-            <columns>
-                <column id="topic"/>
-                <column id="startDate"/>
-                <column id="speaker"/>
-                <column id="duration"/>
-                <column id="description"/>
-                <column id="endDate"/>
-            </columns>
-            <simplePagination/>
-            <buttonsPanel id="buttonsPanel"
-                          alwaysVisible="true">
-                <button id="createBtn" action="talksTable.create"/>
-                <button id="editBtn" action="talksTable.edit"/>
-                <button id="removeBtn" action="talksTable.remove"/>
-            </buttonsPanel>
-        </groupTable>
+        <tabSheet id="talkTab">
+            <tab caption="msg://calendarTab2.caption" id="calendarTab" spacing="true">
+                <calendar
+                        id="talksCalendar"
+                          dataContainer="talksDc"
+                          startDateProperty="startDate"
+                          endDateProperty="endDate"
+                          captionProperty="topic"
+                          descriptionProperty="description"
+                          firstVisibleDayOfWeek="1"
+                          firstVisibleHourOfDay="8"
+                          lastVisibleDayOfWeek="7"
+                          lastVisibleHourOfDay="19"
+                          navigationButtonsVisible="true"
+                />
+            </tab>
+            <tab caption="msg://tableTab.caption" id="tableTab" spacing="true">
+                <groupTable id="talksTable"
+                            width="100%"
+                            dataContainer="talksDc">
+                    <actions>
+                        <action id="create" type="create"/>
+                        <action id="edit" type="edit"/>
+                        <action id="remove" type="remove"/>
+                    </actions>
+                    <columns>
+                        <column id="topic"/>
+                        <column id="startDate"/>
+                        <column id="speaker"/>
+                        <column id="duration"/>
+                        <column id="description"/>
+                        <column id="endDate"/>
+                    </columns>
+                    <simplePagination/>
+                    <buttonsPanel id="buttonsPanel"
+                                  alwaysVisible="true">
+                        <button id="createBtn" action="talksTable.create"/>
+                        <button id="editBtn" action="talksTable.edit"/>
+                        <button id="removeBtn" action="talksTable.remove"/>
+                    </buttonsPanel>
+                </groupTable>
+            </tab>
+        </tabSheet>
         <hbox id="lookupActions" spacing="true" visible="false">
             <button action="lookupSelectAction"/>
             <button action="lookupCancelAction"/>
