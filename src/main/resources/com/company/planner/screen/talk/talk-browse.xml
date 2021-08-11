@@ -41,17 +41,16 @@
             <tab caption="msg://calendarTab2.caption" id="calendarTab" spacing="true">
                 <calendar
                         id="talksCalendar"
-                          dataContainer="talksDc"
-                          startDateProperty="startDate"
-                          endDateProperty="endDate"
-                          captionProperty="topic"
-                          descriptionProperty="description"
-                          firstVisibleDayOfWeek="1"
-                          firstVisibleHourOfDay="8"
-                          lastVisibleDayOfWeek="7"
-                          lastVisibleHourOfDay="19"
-                          navigationButtonsVisible="true"
-                />
+                        dataContainer="talksDc"
+                        startDateProperty="startDate"
+                        endDateProperty="endDate"
+                        captionProperty="topic"
+                        descriptionProperty="description"
+                        firstVisibleDayOfWeek="1"
+                        firstVisibleHourOfDay="8"
+                        lastVisibleDayOfWeek="7"
+                        lastVisibleHourOfDay="19"
+                        navigationButtonsVisible="true"/>
             </tab>
             <tab caption="msg://tableTab.caption" id="tableTab" spacing="true">
                 <groupTable id="talksTable"

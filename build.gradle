@@ -33,6 +33,7 @@ dependencies {
     implementation 'io.jmix.localfs:jmix-localfs-starter'
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.jetbrains:annotations:20.1.0'
 
 
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
