@@ -40,6 +40,8 @@ dependencies {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
     runtimeOnly 'org.postgresql:postgresql'
+    implementation "io.jmix.security:jmix-security-oauth2-starter"
+    implementation "io.jmix.rest:jmix-rest-starter"
 }
 
 test {

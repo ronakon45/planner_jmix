@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns="http://jmix.io/schema/rest/services">
+    <service name="sample_OrderService">
+        <method name="calculateTotalAmount">
+            <param name="orderId"/>
+        </method>
+    </service>
+</services>
